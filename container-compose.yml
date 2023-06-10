@@ -1,0 +1,12 @@
+services:
+  auto1111:
+    command: 
+      -  "/bin/sh"
+      -  "-c"
+      -  "python -u webui.py --listen --port 7860 --precision full --no-half"
+    image: goolashe/automatic1111-sd-webui:latest
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./container:/data
+      - ./output:/output
